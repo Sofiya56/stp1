@@ -1,0 +1,21 @@
+def word_stats(text):
+    # Розбиваємо текст на слова
+    words = text.split()
+    
+    # Кількість слів
+    word_count = len(words)
+    
+    # Знаходимо найдовше слово
+    longest_word = max(words, key=len) if words else ""
+    
+    # Кількість унікальних слів (ігноруючи регістр)
+    unique_words = len(set(word.lower() for word in words))
+    
+    # Формуємо рядок результату
+    result = f"{word_count} слів, найдовше: {longest_word}, унікальних: {unique_words}"
+    
+    return result
+
+ приклад
+text = "Learning Python programming is both fun and challenging"
+print(word_stats(text))
